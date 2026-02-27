@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 260" width="820" height="260">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1117"/>
+      <stop offset="100%" stop-color="#131828"/>
+    </linearGradient>
+    <linearGradient id="barRed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF4560"/>
+      <stop offset="100%" stop-color="#FF6B80"/>
+    </linearGradient>
+    <linearGradient id="barPurple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#775DD0"/>
+      <stop offset="100%" stop-color="#9B7FE8"/>
+    </linearGradient>
+    <linearGradient id="barGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00E396"/>
+      <stop offset="100%" stop-color="#00C896"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="260" fill="url(#bg)" rx="10"/>
+
+  <!-- Title -->
+  <text x="410" y="28" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#A0A8C8" letter-spacing="2">PROJECT STATS</text>
+  <rect x="330" y="34" width="160" height="1.5" rx="1" fill="#3D4566" opacity="0.5"/>
+
+  <!-- === METRIC CARDS (2 rows × 4 cols) === -->
+
+  <!-- Card 1: Lines of Code -->
+  <rect x="22" y="48" width="178" height="88" rx="8" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="22" y="48" width="178" height="4" rx="8" fill="url(#barPurple)"/>
+  <text x="111" y="76" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="900" fill="#775DD0">183</text>
+  <text x="111" y="96" text-anchor="middle" font-family="monospace" font-size="10" fill="#A0A8C8">lines of code</text>
+  <text x="111" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">video_analyzer.py</text>
+  <!-- mini bar -->
+  <rect x="46" y="124" width="130" height="4" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="0.5"/>
+  <rect x="46" y="124" width="130" height="4" rx="2" fill="url(#barPurple)" opacity="0.6"/>
+
+  <!-- Card 2: Dependencies -->
+  <rect x="212" y="48" width="178" height="88" rx="8" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="212" y="48" width="178" height="4" rx="8" fill="url(#barRed)"/>
+  <text x="301" y="76" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="900" fill="#FF4560">4</text>
+  <text x="301" y="96" text-anchor="middle" font-family="monospace" font-size="10" fill="#A0A8C8">dependencies</text>
+  <text x="301" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">opencv · torch · Pillow · transformers</text>
+  <rect x="236" y="124" width="130" height="4" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="0.5"/>
+  <rect x="236" y="124" width="13" height="4" rx="2" fill="url(#barRed)" opacity="0.7"/>
+
+  <!-- Card 3: Model Weights -->
+  <rect x="402" y="48" width="178" height="88" rx="8" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="402" y="48" width="178" height="4" rx="8" fill="url(#barGreen)"/>
+  <text x="491" y="76" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="900" fill="#00E396">~85</text>
+  <text x="491" y="96" text-anchor="middle" font-family="monospace" font-size="10" fill="#A0A8C8">MB model weights</text>
+  <text x="491" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">Falconsai/nsfw_image_detection ViT</text>
+  <rect x="426" y="124" width="130" height="4" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="0.5"/>
+  <rect x="426" y="124" width="100" height="4" rx="2" fill="url(#barGreen)" opacity="0.6"/>
+
+  <!-- Card 4: Input Resolution -->
+  <rect x="592" y="48" width="206" height="88" rx="8" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="592" y="48" width="206" height="4" rx="8" fill="#3D4566"/>
+  <text x="695" y="76" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="900" fill="#A0A8C8">224²</text>
+  <text x="695" y="96" text-anchor="middle" font-family="monospace" font-size="10" fill="#A0A8C8">input resolution</text>
+  <text x="695" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">224 × 224 px per frame (ViT patch grid)</text>
+  <rect x="616" y="124" width="158" height="4" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="0.5"/>
+  <rect x="616" y="124" width="80" height="4" rx="2" fill="#3D4566" opacity="0.6"/>
+
+  <!-- === ROW 2 === -->
+
+  <!-- Card 5: Default frames -->
+  <rect x="22" y="150" width="178" height="88" rx="8" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="22" y="150" width="178" height="4" rx="8" fill="url(#barGreen)"/>
+  <text x="111" y="178" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="900" fill="#00E396">6</text>
+  <text x="111" y="198" text-anchor="middle" font-family="monospace" font-size="10" fill="#A0A8C8">default frames</text>
+  <text x="111" y="214" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">sampled per video (configurable)</text>
+  <rect x="46" y="226" width="130" height="4" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="0.5"/>
+  <rect x="46" y="226" width="16" height="4" rx="2" fill="url(#barGreen)" opacity="0.6"/>
+
+  <!-- Card 6: Classes -->
+  <rect x="212" y="150" width="178" height="88" rx="8" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="212" y="150" width="178" height="4" rx="8" fill="url(#barRed)"/>
+  <text x="301" y="178" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="900" fill="#FF4560">2</text>
+  <text x="301" y="198" text-anchor="middle" font-family="monospace" font-size="10" fill="#A0A8C8">output classes</text>
+  <text x="301" y="214" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">nsfw · normal</text>
+  <!-- Two segments -->
+  <rect x="236" y="226" width="130" height="4" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="0.5"/>
+  <rect x="236" y="226" width="65" height="4" rx="2" fill="url(#barRed)" opacity="0.6"/>
+  <rect x="301" y="226" width="65" height="4" rx="2" fill="url(#barGreen)" opacity="0.4"/>
+
+  <!-- Card 7: Platforms -->
+  <rect x="402" y="150" width="178" height="88" rx="8" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="402" y="150" width="178" height="4" rx="8" fill="url(#barPurple)"/>
+  <text x="491" y="178" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="900" fill="#775DD0">3</text>
+  <text x="491" y="198" text-anchor="middle" font-family="monospace" font-size="10" fill="#A0A8C8">supported platforms</text>
+  <text x="491" y="214" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">Linux · macOS · Windows</text>
+  <rect x="426" y="226" width="130" height="4" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="0.5"/>
+  <rect x="426" y="226" width="130" height="4" rx="2" fill="url(#barPurple)" opacity="0.5"/>
+
+  <!-- Card 8: NSFW threshold default -->
+  <rect x="592" y="150" width="206" height="88" rx="8" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="592" y="150" width="206" height="4" rx="8" fill="url(#barRed)"/>
+  <text x="695" y="178" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="900" fill="#FF4560">0.5</text>
+  <text x="695" y="198" text-anchor="middle" font-family="monospace" font-size="10" fill="#A0A8C8">default NSFW threshold</text>
+  <text x="695" y="214" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">softmax confidence (range 0.0 – 1.0)</text>
+  <rect x="616" y="226" width="158" height="4" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="0.5"/>
+  <rect x="616" y="226" width="79" height="4" rx="2" fill="url(#barRed)" opacity="0.6"/>
+</svg>

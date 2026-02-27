@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1117"/>
+      <stop offset="100%" stop-color="#131828"/>
+    </linearGradient>
+    <marker id="arrowGray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#3D4566"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#FF4560"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#00E396"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#775DD0"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="url(#bg)" rx="10"/>
+
+  <!-- Title -->
+  <text x="410" y="30" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#A0A8C8" letter-spacing="2">DATA FLOW PIPELINE</text>
+  <rect x="300" y="36" width="220" height="1.5" rx="1" fill="#3D4566" opacity="0.5"/>
+
+  <!-- Step numbers row y=55 (labels), boxes y=70 -->
+
+  <!-- STEP 1: Video File Input -->
+  <rect x="22" y="58" width="108" height="66" rx="7" fill="#1A1F30" stroke="#3D4566" stroke-width="1.5"/>
+  <rect x="22" y="58" width="108" height="16" rx="7" fill="#3D4566" opacity="0.5"/>
+  <rect x="22" y="66" width="108" height="8" rx="0" fill="#3D4566" opacity="0.5"/>
+  <text x="76" y="70" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">1 · INPUT</text>
+  <!-- film icon -->
+  <rect x="50" y="82" width="20" height="14" rx="2" fill="#3D4566"/>
+  <rect x="47" y="84" width="5" height="4" rx="1" fill="#0F1117"/>
+  <rect x="47" y="90" width="5" height="4" rx="1" fill="#0F1117"/>
+  <rect x="72" y="84" width="5" height="4" rx="1" fill="#0F1117"/>
+  <rect x="72" y="90" width="5" height="4" rx="1" fill="#0F1117"/>
+  <text x="76" y="107" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">video file</text>
+  <text x="76" y="119" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">.mp4 / .avi / .mkv</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="130" y1="91" x2="152" y2="91" stroke="#3D4566" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- STEP 2: VideoCapture (cv2) -->
+  <rect x="152" y="58" width="112" height="66" rx="7" fill="#1A1F30" stroke="#FF4560" stroke-width="1.5"/>
+  <rect x="152" y="58" width="112" height="16" rx="7" fill="#FF4560" opacity="0.25"/>
+  <rect x="152" y="66" width="112" height="8" fill="#FF4560" opacity="0.25"/>
+  <text x="208" y="70" text-anchor="middle" font-family="monospace" font-size="9" fill="#FF4560">2 · cv2</text>
+  <text x="208" y="87" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">VideoCapture</text>
+  <text x="208" y="99" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">total_frames</text>
+  <text x="208" y="111" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">interval calc</text>
+  <text x="208" y="119" text-anchor="middle" font-family="monospace" font-size="8" fill="#FF4560">CAP_PROP_POS_FRAMES</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="264" y1="91" x2="284" y2="91" stroke="#3D4566" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- STEP 3: Frame decode -->
+  <rect x="284" y="58" width="112" height="66" rx="7" fill="#1A1F30" stroke="#FF4560" stroke-width="1.5"/>
+  <rect x="284" y="58" width="112" height="16" rx="7" fill="#FF4560" opacity="0.25"/>
+  <rect x="284" y="66" width="112" height="8" fill="#FF4560" opacity="0.25"/>
+  <text x="340" y="70" text-anchor="middle" font-family="monospace" font-size="9" fill="#FF4560">3 · DECODE</text>
+  <text x="340" y="87" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">cap.read()</text>
+  <text x="340" y="99" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">BGR ndarray</text>
+  <text x="340" y="111" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">cvtColor BGR→RGB</text>
+  <text x="340" y="119" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">Image.fromarray()</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="396" y1="91" x2="416" y2="91" stroke="#3D4566" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- STEP 4: ViTImageProcessor -->
+  <rect x="416" y="58" width="116" height="66" rx="7" fill="#1A1F30" stroke="#775DD0" stroke-width="1.5"/>
+  <rect x="416" y="58" width="116" height="16" rx="7" fill="#775DD0" opacity="0.25"/>
+  <rect x="416" y="66" width="116" height="8" fill="#775DD0" opacity="0.25"/>
+  <text x="474" y="70" text-anchor="middle" font-family="monospace" font-size="9" fill="#775DD0">4 · PREPROCESS</text>
+  <text x="474" y="87" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">ViTImageProcessor</text>
+  <text x="474" y="99" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">resize 224×224</text>
+  <text x="474" y="111" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">normalize pixels</text>
+  <text x="474" y="119" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">patch extraction</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="532" y1="91" x2="550" y2="91" stroke="#775DD0" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+  <!-- STEP 5: ViT Inference -->
+  <rect x="550" y="58" width="116" height="66" rx="7" fill="#1A1F30" stroke="#775DD0" stroke-width="1.5"/>
+  <rect x="550" y="58" width="116" height="16" rx="7" fill="#775DD0" opacity="0.3"/>
+  <rect x="550" y="66" width="116" height="8" fill="#775DD0" opacity="0.3"/>
+  <text x="608" y="70" text-anchor="middle" font-family="monospace" font-size="9" fill="#775DD0">5 · INFERENCE</text>
+  <text x="608" y="87" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">ViT forward pass</text>
+  <text x="608" y="99" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">logits → softmax</text>
+  <text x="608" y="111" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">argmax + id2label</text>
+  <text x="608" y="119" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">label + confidence</text>
+
+  <!-- Arrow 5→6 -->
+  <line x1="666" y1="91" x2="684" y2="91" stroke="#775DD0" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+  <!-- STEP 6: Threshold check -->
+  <!-- Diamond shape for decision -->
+  <polygon points="760,58 796,91 760,124 724,91" fill="#1A1F30" stroke="#FF4560" stroke-width="1.5"/>
+  <text x="760" y="87" text-anchor="middle" font-family="monospace" font-size="8" fill="#FF4560">NSFW?</text>
+  <text x="760" y="98" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">≥ threshold</text>
+
+  <!-- === LOOP BACK PATH (more frames) === -->
+  <!-- Arrow from decision down to "more frames" label, then back left to step 2 -->
+  <line x1="760" y1="124" x2="760" y2="155" stroke="#3D4566" stroke-width="1.2"/>
+  <line x1="760" y1="155" x2="208" y2="155" stroke="#3D4566" stroke-width="1.2"/>
+  <line x1="208" y1="155" x2="208" y2="124" stroke="#3D4566" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+  <text x="484" y="170" text-anchor="middle" font-family="monospace" font-size="9" fill="#3D4566">No (below threshold) · next frame in loop</text>
+
+  <!-- === NSFW DETECTED PATH === -->
+  <!-- Arrow from decision right (NSFW YES) - arc down -->
+  <line x1="796" y1="91" x2="810" y2="91" stroke="#FF4560" stroke-width="1.5"/>
+  <line x1="810" y1="91" x2="810" y2="200" stroke="#FF4560" stroke-width="1.5"/>
+  <line x1="810" y1="200" x2="688" y2="200" stroke="#FF4560" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <text x="810" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="#FF4560" transform="rotate(90,810,150)">NSFW detected</text>
+
+  <!-- NSFW Result Box -->
+  <rect x="558" y="182" width="130" height="50" rx="7" fill="#1A1F30" stroke="#FF4560" stroke-width="1.5"/>
+  <rect x="558" y="182" width="130" height="16" rx="7" fill="#FF4560" opacity="0.3"/>
+  <rect x="558" y="190" width="130" height="8" fill="#FF4560" opacity="0.3"/>
+  <text x="623" y="194" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#FF4560">NSFW RESULT</text>
+  <text x="623" y="209" text-anchor="middle" font-family="monospace" font-size="8" fill="#A0A8C8">nsfw_detected: true</text>
+  <text x="623" y="222" text-anchor="middle" font-family="monospace" font-size="8" fill="#A0A8C8">first_nsfw_frame: {...}</text>
+
+  <!-- CLEAN RESULT PATH (all frames done, no NSFW) -->
+  <!-- "all frames done" arrow from loop -->
+  <line x1="208" y1="155" x2="208" y2="200" stroke="#00E396" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="208" y1="200" x2="340" y2="200" stroke="#00E396" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowGreen)"/>
+  <text x="275" y="194" text-anchor="middle" font-family="monospace" font-size="8" fill="#00E396">all frames scanned</text>
+
+  <!-- Clean Result Box -->
+  <rect x="340" y="182" width="130" height="50" rx="7" fill="#1A1F30" stroke="#00E396" stroke-width="1.5"/>
+  <rect x="340" y="182" width="130" height="16" rx="7" fill="#00E396" opacity="0.18"/>
+  <rect x="340" y="190" width="130" height="8" fill="#00E396" opacity="0.18"/>
+  <text x="405" y="194" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#00E396">CLEAN RESULT</text>
+  <text x="405" y="209" text-anchor="middle" font-family="monospace" font-size="8" fill="#A0A8C8">nsfw_detected: false</text>
+  <text x="405" y="222" text-anchor="middle" font-family="monospace" font-size="8" fill="#A0A8C8">first_nsfw_frame: null</text>
+
+  <!-- Merge both results into final result dict -->
+  <line x1="470" y1="207" x2="510" y2="207" stroke="#3D4566" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+  <line x1="558" y1="207" x2="536" y2="207" stroke="#3D4566" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+
+  <!-- Final result dict -->
+  <rect x="510" y="190" width="26" height="34" rx="3" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <text x="523" y="212" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">→</text>
+
+  <!-- Final output -->
+  <rect x="160" y="260" width="500" height="92" rx="8" fill="#131828" stroke="#3D4566" stroke-width="1"/>
+  <text x="410" y="278" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="700" fill="#A0A8C8">Output: result dict</text>
+  <!-- dict content -->
+  <text x="200" y="300" font-family="monospace" font-size="9" fill="#775DD0">frames_analyzed</text>
+  <text x="200" y="315" font-family="monospace" font-size="9" fill="#FF4560">nsfw_detected</text>
+  <text x="200" y="330" font-family="monospace" font-size="9" fill="#FF4560">first_nsfw_frame</text>
+  <text x="440" y="300" font-family="monospace" font-size="9" fill="#3D4566">frame_results[n]</text>
+  <text x="440" y="315" font-family="monospace" font-size="9" fill="#3D4566">  frame_number</text>
+  <text x="440" y="330" font-family="monospace" font-size="9" fill="#3D4566">  prediction / confidence</text>
+
+  <!-- Arrow from results to output box -->
+  <line x1="410" y1="232" x2="410" y2="260" stroke="#3D4566" stroke-width="1.2" marker-end="url(#arrowGray)"/>
+
+  <!-- Layer labels at bottom -->
+  <rect x="22" y="358" width="776" height="16" rx="4" fill="#1A1F30" stroke="#3D4566" stroke-width="0.8"/>
+  <rect x="22" y="358" width="130" height="16" rx="4" fill="#FF4560" opacity="0.12"/>
+  <text x="76" y="370" text-anchor="middle" font-family="monospace" font-size="8" fill="#FF4560">I/O Layer (cv2)</text>
+  <rect x="155" y="358" width="112" height="16" fill="#FF4560" opacity="0.12"/>
+  <text x="211" y="370" text-anchor="middle" font-family="monospace" font-size="8" fill="#FF4560">Frame Decode</text>
+  <rect x="270" y="358" width="130" height="16" fill="#775DD0" opacity="0.12"/>
+  <text x="335" y="370" text-anchor="middle" font-family="monospace" font-size="8" fill="#775DD0">Preprocessing</text>
+  <rect x="403" y="358" width="130" height="16" fill="#775DD0" opacity="0.15"/>
+  <text x="468" y="370" text-anchor="middle" font-family="monospace" font-size="8" fill="#775DD0">AI Inference</text>
+  <rect x="536" y="358" width="130" height="16" fill="#FF4560" opacity="0.12"/>
+  <text x="601" y="370" text-anchor="middle" font-family="monospace" font-size="8" fill="#FF4560">Threshold Decision</text>
+  <rect x="669" y="358" width="129" height="16" rx="4" fill="#00E396" opacity="0.1"/>
+  <text x="733" y="370" text-anchor="middle" font-family="monospace" font-size="8" fill="#00E396">Result Output</text>
+</svg>
