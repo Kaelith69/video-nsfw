@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" width="820" height="480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1117"/>
+      <stop offset="100%" stop-color="#131828"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#3D4566"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#FF4560"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#775DD0"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#00E396"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="480" fill="url(#bg)" rx="10"/>
+
+  <!-- Title -->
+  <text x="410" y="34" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#A0A8C8" letter-spacing="2">SYSTEM ARCHITECTURE</text>
+  <rect x="300" y="40" width="220" height="1.5" rx="1" fill="#3D4566" opacity="0.6"/>
+
+  <!-- === LAYER LABELS === -->
+  <!-- Caller layer -->
+  <text x="14" y="92" font-family="monospace" font-size="9" fill="#3D4566" transform="rotate(-90,14,92)">CALLER</text>
+
+  <!-- Python Library layer -->
+  <rect x="28" y="58" width="6" height="350" rx="3" fill="#775DD0" opacity="0.25"/>
+  <text x="22" y="240" font-family="monospace" font-size="9" fill="#775DD0" opacity="0.8" transform="rotate(-90,22,240)">PYTHON LIBRARY</text>
+
+  <!-- External Dependencies layer -->
+  <rect x="700" y="58" width="6" height="350" rx="3" fill="#FF4560" opacity="0.18"/>
+  <text x="812" y="240" font-family="monospace" font-size="9" fill="#FF4560" opacity="0.7" transform="rotate(90,812,240)">EXTERNAL DEPS</text>
+
+  <!-- === CALLER BOX === -->
+  <rect x="44" y="60" width="130" height="48" rx="6" fill="#1A1F30" stroke="#3D4566" stroke-width="1.2"/>
+  <text x="109" y="80" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="700" fill="#A0A8C8">Caller</text>
+  <text x="109" y="97" text-anchor="middle" font-family="monospace" font-size="9" fill="#3D4566">CLI / Python script</text>
+
+  <!-- === VideoContentAnalyzer outer box === -->
+  <rect x="44" y="130" width="660" height="280" rx="8" fill="#131828" stroke="#775DD0" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.9"/>
+  <text x="374" y="149" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="700" fill="#775DD0">VideoContentAnalyzer</text>
+  <text x="374" y="163" text-anchor="middle" font-family="monospace" font-size="9" fill="#3D4566">video_analyzer.py</text>
+
+  <!-- __init__ box -->
+  <rect x="62" y="172" width="200" height="100" rx="6" fill="#1A1F30" stroke="#775DD0" stroke-width="1"/>
+  <text x="162" y="190" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#775DD0">__init__</text>
+  <text x="162" y="207" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">device selection</text>
+  <text x="162" y="222" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">model.from_pretrained()</text>
+  <text x="162" y="237" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">processor.from_pretrained()</text>
+  <text x="162" y="252" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">logging setup</text>
+
+  <!-- analyze_frame box -->
+  <rect x="282" y="172" width="200" height="100" rx="6" fill="#1A1F30" stroke="#775DD0" stroke-width="1"/>
+  <text x="382" y="190" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#775DD0">analyze_frame()</text>
+  <text x="382" y="207" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">processor(image)</text>
+  <text x="382" y="222" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">model forward pass</text>
+  <text x="382" y="237" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">softmax + argmax</text>
+  <text x="382" y="252" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">id2label lookup</text>
+
+  <!-- analyze_video box -->
+  <rect x="282" y="296" width="200" height="100" rx="6" fill="#1A1F30" stroke="#775DD0" stroke-width="1"/>
+  <text x="382" y="314" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#775DD0">analyze_video()</text>
+  <text x="382" y="331" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">path validation</text>
+  <text x="382" y="346" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">VideoCapture open</text>
+  <text x="382" y="361" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">frame interval calc</text>
+  <text x="382" y="376" text-anchor="middle" font-family="monospace" font-size="9" fill="#A0A8C8">early-stop loop</text>
+
+  <!-- === EXTERNAL DEPS === -->
+  <!-- OpenCV -->
+  <rect x="556" y="172" width="130" height="40" rx="6" fill="#1A1F30" stroke="#FF4560" stroke-width="1"/>
+  <text x="621" y="188" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#FF4560">opencv-python</text>
+  <text x="621" y="203" text-anchor="middle" font-family="monospace" font-size="9" fill="#3D4566">Video I/O · BGR→RGB</text>
+
+  <!-- Pillow -->
+  <rect x="556" y="224" width="130" height="40" rx="6" fill="#1A1F30" stroke="#FF4560" stroke-width="1"/>
+  <text x="621" y="240" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#FF4560">Pillow (PIL)</text>
+  <text x="621" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#3D4566">ndarray → PIL.Image</text>
+
+  <!-- Transformers -->
+  <rect x="556" y="276" width="130" height="40" rx="6" fill="#1A1F30" stroke="#FF4560" stroke-width="1"/>
+  <text x="621" y="292" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#FF4560">🤗 transformers</text>
+  <text x="621" y="307" text-anchor="middle" font-family="monospace" font-size="9" fill="#3D4566">ViT model + processor</text>
+
+  <!-- PyTorch -->
+  <rect x="556" y="328" width="130" height="40" rx="6" fill="#1A1F30" stroke="#FF4560" stroke-width="1"/>
+  <text x="621" y="344" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#FF4560">PyTorch</text>
+  <text x="621" y="359" text-anchor="middle" font-family="monospace" font-size="9" fill="#3D4566">Tensors · GPU/CPU</text>
+
+  <!-- HuggingFace Hub -->
+  <rect x="556" y="380" width="130" height="32" rx="6" fill="#1A1F30" stroke="#3D4566" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="621" y="396" text-anchor="middle" font-family="monospace" font-size="10" fill="#3D4566">HuggingFace Hub</text>
+  <text x="621" y="407" text-anchor="middle" font-family="monospace" font-size="8" fill="#3D4566">first-run download only</text>
+
+  <!-- === ARROWS === -->
+  <!-- Caller → analyze_video -->
+  <line x1="109" y1="108" x2="109" y2="124" stroke="#3D4566" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="109" y1="124" x2="282" y2="124" stroke="#3D4566" stroke-width="1.2"/>
+  <line x1="282" y1="124" x2="282" y2="296" stroke="#3D4566" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- analyze_video → analyze_frame (calls) -->
+  <line x1="382" y1="272" x2="382" y2="172" stroke="#775DD0" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowPurple)"/>
+  <text x="390" y="230" font-family="monospace" font-size="8" fill="#775DD0">calls per frame</text>
+
+  <!-- __init__ → analyze_frame (self.model / processor) -->
+  <line x1="262" y1="222" x2="282" y2="222" stroke="#3D4566" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  <text x="252" y="215" font-family="monospace" font-size="8" fill="#3D4566" text-anchor="middle">self.model</text>
+
+  <!-- analyze_frame → OpenCV -->
+  <line x1="482" y1="200" x2="556" y2="200" stroke="#FF4560" stroke-width="1.2" marker-end="url(#arrowRed)"/>
+
+  <!-- analyze_video → Pillow -->
+  <line x1="482" y1="244" x2="556" y2="244" stroke="#FF4560" stroke-width="1.2" marker-end="url(#arrowRed)"/>
+
+  <!-- analyze_frame → Transformers -->
+  <line x1="482" y1="226" x2="530" y2="226" stroke="#FF4560" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="530" y1="226" x2="530" y2="296" stroke="#FF4560" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="530" y1="296" x2="556" y2="296" stroke="#FF4560" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrowRed)"/>
+
+  <!-- __init__ → PyTorch (device) -->
+  <line x1="262" y1="250" x2="530" y2="250" stroke="#FF4560" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="530" y1="250" x2="530" y2="348" stroke="#FF4560" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="530" y1="348" x2="556" y2="348" stroke="#FF4560" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrowRed)"/>
+
+  <!-- Transformers → HuggingFace Hub (dashed, first run) -->
+  <line x1="621" y1="316" x2="621" y2="380" stroke="#3D4566" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+
+  <!-- Result arrow back to caller -->
+  <line x1="282" y1="346" x2="200" y2="346" stroke="#00E396" stroke-width="1.2"/>
+  <line x1="200" y1="346" x2="200" y2="420" stroke="#00E396" stroke-width="1.2"/>
+  <line x1="200" y1="420" x2="109" y2="420" stroke="#00E396" stroke-width="1.2"/>
+  <line x1="109" y1="420" x2="109" y2="416" stroke="#00E396" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+  <rect x="62" y="408" width="96" height="18" rx="4" fill="#1A1F30" stroke="#00E396" stroke-width="1"/>
+  <text x="110" y="421" text-anchor="middle" font-family="monospace" font-size="9" fill="#00E396">result dict</text>
+
+  <!-- Legend -->
+  <rect x="46" y="430" width="600" height="38" rx="5" fill="#1A1F30" stroke="#3D4566" stroke-width="0.8"/>
+  <line x1="60" y1="450" x2="80" y2="450" stroke="#3D4566" stroke-width="1.5"/>
+  <text x="85" y="454" font-family="monospace" font-size="9" fill="#3D4566">control flow</text>
+  <line x1="145" y1="450" x2="165" y2="450" stroke="#775DD0" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="170" y="454" font-family="monospace" font-size="9" fill="#775DD0">internal call</text>
+  <line x1="235" y1="450" x2="255" y2="450" stroke="#FF4560" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="260" y="454" font-family="monospace" font-size="9" fill="#FF4560">dependency use</text>
+  <line x1="340" y1="450" x2="360" y2="450" stroke="#00E396" stroke-width="1.5"/>
+  <text x="365" y="454" font-family="monospace" font-size="9" fill="#00E396">return value</text>
+  <rect x="420" y="440" width="10" height="10" rx="2" fill="#1A1F30" stroke="#3D4566" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="435" y="450" font-family="monospace" font-size="9" fill="#3D4566">first run only</text>
+  <rect x="510" y="440" width="10" height="10" rx="2" fill="#1A1F30" stroke="#FF4560" stroke-width="1"/>
+  <text x="525" y="450" font-family="monospace" font-size="9" fill="#FF4560">external dep</text>
+  <rect x="600" y="440" width="10" height="10" rx="2" fill="#1A1F30" stroke="#775DD0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="615" y="450" font-family="monospace" font-size="9" fill="#775DD0">class boundary</text>
+</svg>

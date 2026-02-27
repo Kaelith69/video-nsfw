@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 220" width="820" height="220">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0F1117"/>
+      <stop offset="100%" stop-color="#161B2E"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF4560"/>
+      <stop offset="100%" stop-color="#775DD0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="220" fill="url(#bg)" rx="10"/>
+
+  <!-- Left decorative filmstrip -->
+  <rect x="18" y="30" width="36" height="160" rx="4" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="22" y="22" width="8" height="12" rx="2" fill="#3D4566"/>
+  <rect x="34" y="22" width="8" height="12" rx="2" fill="#3D4566"/>
+  <rect x="22" y="186" width="8" height="12" rx="2" fill="#3D4566"/>
+  <rect x="34" y="186" width="8" height="12" rx="2" fill="#3D4566"/>
+  <rect x="22" y="50" width="28" height="22" rx="2" fill="#FF4560" opacity="0.18"/>
+  <rect x="22" y="80" width="28" height="22" rx="2" fill="#775DD0" opacity="0.22"/>
+  <rect x="22" y="110" width="28" height="22" rx="2" fill="#00E396" opacity="0.15"/>
+  <rect x="22" y="140" width="28" height="22" rx="2" fill="#FF4560" opacity="0.12"/>
+  <rect x="22" y="168" width="28" height="16" rx="2" fill="#775DD0" opacity="0.18"/>
+
+  <!-- Right decorative filmstrip -->
+  <rect x="766" y="30" width="36" height="160" rx="4" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <rect x="770" y="22" width="8" height="12" rx="2" fill="#3D4566"/>
+  <rect x="782" y="22" width="8" height="12" rx="2" fill="#3D4566"/>
+  <rect x="770" y="186" width="8" height="12" rx="2" fill="#3D4566"/>
+  <rect x="782" y="186" width="8" height="12" rx="2" fill="#3D4566"/>
+  <rect x="770" y="50" width="28" height="22" rx="2" fill="#775DD0" opacity="0.18"/>
+  <rect x="770" y="80" width="28" height="22" rx="2" fill="#00E396" opacity="0.15"/>
+  <rect x="770" y="110" width="28" height="22" rx="2" fill="#FF4560" opacity="0.18"/>
+  <rect x="770" y="140" width="28" height="22" rx="2" fill="#775DD0" opacity="0.12"/>
+  <rect x="770" y="168" width="28" height="16" rx="2" fill="#00E396" opacity="0.12"/>
+
+  <!-- Horizontal scan-line pulse (decorative waveform at bottom) -->
+  <polyline points="70,185 100,185 110,172 120,196 130,178 140,188 155,185 175,185 185,168 195,196 205,175 215,188 230,185 260,185 270,173 280,192 290,179 300,185 320,185 335,170 345,195 355,177 365,185 390,185 405,172 415,192 425,180 435,185 460,185 475,168 485,196 495,178 505,185 525,185 540,173 550,192 560,179 570,185 590,185 605,170 615,195 625,176 635,185 660,185 675,172 685,193 695,178 705,185 730,185 750,185"
+        fill="none" stroke="#775DD0" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- ViT attention grid dots (decorative) -->
+  <g opacity="0.12" fill="#775DD0">
+    <circle cx="90" cy="55" r="2.5"/>
+    <circle cx="104" cy="55" r="2.5"/>
+    <circle cx="90" cy="68" r="2.5"/>
+    <circle cx="104" cy="68" r="2.5"/>
+    <circle cx="90" cy="81" r="2.5"/>
+    <circle cx="104" cy="81" r="2.5"/>
+    <circle cx="718" cy="55" r="2.5"/>
+    <circle cx="732" cy="55" r="2.5"/>
+    <circle cx="718" cy="68" r="2.5"/>
+    <circle cx="732" cy="68" r="2.5"/>
+    <circle cx="718" cy="81" r="2.5"/>
+    <circle cx="732" cy="81" r="2.5"/>
+  </g>
+
+  <!-- "NSFW" warning glyph (shield) -->
+  <path d="M388,28 L402,36 L402,52 Q402,62 388,68 Q374,62 374,52 L374,36 Z" fill="#FF4560" opacity="0.15" stroke="#FF4560" stroke-width="1.2"/>
+  <text x="388" y="53" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#FF4560" opacity="0.7">!</text>
+
+  <!-- Title -->
+  <text x="410" y="115" text-anchor="middle" font-family="'Segoe UI', 'Liberation Sans', Arial, sans-serif"
+        font-size="58" font-weight="900" letter-spacing="-1" fill="url(#titleGrad)" filter="url(#glow)">video-nsfw</text>
+
+  <!-- Tagline -->
+  <text x="410" y="148" text-anchor="middle" font-family="'Segoe UI', 'Liberation Sans', Arial, sans-serif"
+        font-size="15" font-weight="400" fill="#A0A8C8" letter-spacing="2">ViT-powered NSFW detection for video files · GPU-accelerated · fully local</text>
+
+  <!-- Bottom accent line -->
+  <rect x="300" y="162" width="220" height="2" rx="1" fill="url(#titleGrad)" opacity="0.7"/>
+
+  <!-- Python badge pill -->
+  <rect x="306" y="172" width="72" height="18" rx="9" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <text x="342" y="185" text-anchor="middle" font-family="monospace" font-size="10" fill="#775DD0">Python 3.x</text>
+
+  <!-- PyTorch badge pill -->
+  <rect x="386" y="172" width="62" height="18" rx="9" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <text x="417" y="185" text-anchor="middle" font-family="monospace" font-size="10" fill="#FF4560">PyTorch</text>
+
+  <!-- HuggingFace badge pill -->
+  <rect x="456" y="172" width="62" height="18" rx="9" fill="#1A1F30" stroke="#3D4566" stroke-width="1"/>
+  <text x="487" y="185" text-anchor="middle" font-family="monospace" font-size="10" fill="#00E396">🤗 HF ViT</text>
+</svg>
